@@ -1,0 +1,33 @@
+#!/bin/bash
+#1, auto update
+#sudo $HOME/.config/lybspwm/autoupdate/lyauto_update_system & > /dev/null
+
+# auto backlight
+sudo $HOME/.config/lybspwm/lysof/lyautobacklight/autobacklight &
+
+#2, xbindkeys
+xbindkeys -f $HOME/.config/lybspwm/xbindkeys/xbindkeysrc
+
+#, screen 720p
+#$HOME/.screenlayout/zephan_720p.sh &
+
+#3, polybar
+$HOME/.config/lybspwm/polybar/polybar_launch &
+
+#4, fcitx
+fcitx &
+
+#5, i3lock
+xautolock -time 10 -locker "i3lock" &
+
+#6, xinput
+$HOME/.config/lybspwm/lysof/ly_xinput & 
+
+#7, wallpaper
+$HOME/.config/lybspwm/lydywp/lydywp_launch random 114.05 22.38 &
+
+#8, xmodmap
+$HOME/.config/lybspwm/lysof/ly_xmodmap &
+
+#9, picom
+picom --config=$HOME/.config/lybspwm/picom/picom.conf &

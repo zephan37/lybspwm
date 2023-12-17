@@ -1,0 +1,9 @@
+#!/bin/bash
+LocalDir=$(cd "$(dirname $0)";pwd)
+while true
+do
+	image_path=$($LocalDir/lydywp $1 $2 $3)
+	image_path=$(echo $image_path | sed 's/png/jpg/g')
+	feh --bg-fill $image_path
+	sleep 600
+done
